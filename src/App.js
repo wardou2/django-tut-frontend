@@ -27,31 +27,31 @@ class App extends Component {
      .catch(err => console.log(err));
  };
 
- displayCompleted = status => {
-   if (status) {
-     return this.setState({ viewCompleted: true });
-   }
-   return this.setState({ viewCompleted: false });
- };
+displayCompleted = status => {
+  if (status) {
+    return this.setState({ viewCompleted: true });
+  }
+  return this.setState({ viewCompleted: false });
+};
 
- renderTabList = () => {
-   return (
-     <div className="my-5 tab-list">
-       <span
-         onClick={() => this.displayCompleted(true)}
-         className={this.state.viewCompleted ? "active" : ""}
-       >
-         complete
-       </span>
-       <span
-         onClick={() => this.displayCompleted(false)}
-         className={this.state.viewCompleted ? "" : "active"}
-       >
-         Incomplete
-       </span>
-     </div>
-   );
- };
+renderTabList = () => {
+  return (
+    <div className="my-5 tab-list">
+      <span
+        onClick={() => this.displayCompleted(true)}
+        className={this.state.viewCompleted ? "active" : ""}
+      >
+        complete
+      </span>
+      <span
+        onClick={() => this.displayCompleted(false)}
+        className={this.state.viewCompleted ? "" : "active"}
+      >
+        Incomplete
+      </span>
+    </div>
+  );
+};
 
  renderItems = () => {
    const { viewCompleted } = this.state;
